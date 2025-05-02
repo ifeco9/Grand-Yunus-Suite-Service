@@ -1,0 +1,900 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: poppins;
+
+}
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: goldenrod;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    
+}
+
+nav ul li a:active{
+    color: green;
+}
+
+.menu-icon{
+    display: none;
+    cursor: pointer;
+    
+}
+
+/* nav ul li a:nth-child(1) {
+    text-decoration: underline;
+} */
+
+nav .btn a{
+    text-decoration: none;
+    color: goldenrod;
+    border: 1px, solid, goldenrod;
+    padding: .8rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+nav .btn a:hover{
+    text-decoration: none;
+    color: white;
+    background-color: goldenrod;
+    padding: .8rem;
+    border-radius: 5px;
+}
+
+.side-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.side-bar li {
+    width: 100%;
+    padding-left: 3rem;
+}
+
+.side-bar li a{
+    width: 100%;
+}
+.side-bar li a:hover{
+    width: 100%;
+    background-color: black;
+    text-decoration: none;
+    padding: 1rem;
+
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.check {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+#check {
+    background-color: goldenrod;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.check-in {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: 1px, solid, white;
+
+}
+
+.check-out {
+    display: inline-flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: 1px, solid, white;
+
+}
+
+.adult {
+    display: inline-flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: 1px, solid, white;
+
+
+}
+
+.child {
+    display: inline-flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: 1px, solid, white;
+
+
+}
+
+#check button {
+    background-color: white;
+    color: goldenrod;
+   width: 100%;
+   padding: 1rem;
+   border: none;
+   font-size: 1rem;
+   margin-top: 1rem;
+    
+}
+
+#check button:hover {
+    background-color: black;
+    color: white;
+   width: 100%;
+   padding: 1rem;
+   border: none;
+   font-size: 1rem;
+    
+}
+
+.check input {
+    background: none;
+    border: none;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 200;
+  
+}
+
+.check select {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.check option {
+    color: white;
+    background-color: black;
+    /* width: 500rem; */
+
+}
+  #showcase{
+    text-align: center;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    background-image: url('https://www.hilton.com/im/en/NoHotel/22467438/q1-feb-web-default-seasonal-a.png?impolicy=crop&cw=4500&ch=3000&gravity=NorthWest&xposition=0&yposition=0&rw=3000&rh=2002');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
+
+
+  }
+
+#showcase h1 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    font-weight: 200;
+    color: white;
+}
+
+#showcase p {
+    text-align: center;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: white;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1rem;
+}
+
+#showcase a {
+    text-decoration: none;
+    text-align: center;
+    color: goldenrod;
+    background-color: white;
+    border-radius: 3px;
+    padding: 1rem;
+
+}
+
+#showcase a:hover {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 3px;
+    padding: 1rem;
+
+}
+
+#card {
+    
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-color: goldenrod;
+    text-align: center;
+}
+
+.early-p h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+}
+
+.early-p p{
+    font-weight: 300;
+    color: white;
+    padding-bottom: 2rem;
+}
+/*
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: center;
+    color: goldenrod;
+}
+
+.card img {
+    width: 18rem;
+    height: 20rem;
+}
+
+.card-1 {
+    background-color: black;
+    border-radius: 2rem;
+    color: goldenrod;
+}
+
+.card-2 {
+    background-color: black;
+    border-radius: 2rem;
+    color: goldenrod;
+}
+
+.card-3 {
+    background-color: black;
+    border-radius: 2rem;
+    color: goldenrod;
+}
+
+.card-4 {
+    background-color: black;
+    border-radius: 2rem;
+    color: goldenrod;
+} */
+
+.card-list .card-item .card-link {
+    
+    display: block;
+    background-color: white;
+    padding: 1rem;
+    border-radius: .7rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    color: goldenrod;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+} 
+
+
+
+.card-link p {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.card-link img {
+    width: 100%;
+}
+
+.card-list .card-item .card-link:hover {
+    border-color: black;
+}
+
+
+.card-list .card-item{
+    list-style: none;
+}
+
+/* .card-list .card-link .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+} */
+
+/* .card-list .card-link .card-button {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    background: none;
+    border: 2px solid grey;
+    transform: rotate(-45deg);
+} */
+
+#accommodation {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.p-tag p {
+    text-transform: uppercase;
+    color: grey;
+}
+
+#accommodation h2{
+    font-size: 2rem;
+    font-weight: 200;
+    
+}
+
+.write {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    padding-bottom: 5rem;
+}
+
+.write button {
+    background-color: goldenrod;
+    color: white;
+    padding: 1rem;
+    border: none;
+}
+
+.write button:hover {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border: none;
+}
+
+.rooms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rooms img {
+    width: 24rem;
+}
+.rooms p img {
+    width: 1.5rem;
+    gap: 1rem;
+}
+
+.rooms h3 {
+    font-weight: 200;
+    font-size: 2rem;
+}
+.p-tags p {
+    display: inline-flex;
+    gap: .5rem;
+}
+
+.p-tags {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 3rem;
+}
+
+.rooms button {
+    margin-top: 1rem;
+    background-color: none;
+    border: none;
+    text-decoration: none;
+
+}
+
+.rooms button:hover {
+    margin-top: 1rem;
+    background-color: none;
+    border: none;
+    text-decoration: underline;
+    
+}
+
+#review {
+    background-image: url('https://th.bing.com/th/id/R.f85dfe5577c4dadefb2c504745045d89?rik=b7aIZNvrtQ2wmQ&pid=ImgRaw&r=0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: brightness(50%); */
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+  
+}
+
+.reviews {
+    position: relative;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15rem;
+    text-align: center;
+}
+
+
+
+.reviews p {
+
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.reviews h4{
+    padding-bottom: 2rem;
+    font-size: 3rem;
+    font-weight: 200;
+    font-style: italic;
+    color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.five-stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;   
+    padding-bottom: 10rem;
+}
+
+.five-stars img{
+    width: 2rem;
+}
+
+.essentials {
+    padding-top: 3rem;
+}
+
+.essentials h3 {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.essentials h4 {
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 2rem;
+
+}
+
+.essential-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    padding-bottom: 5rem;
+
+}
+
+.essential-img img {
+    width: 45rem;
+}
+
+.essential-text img {
+    width: 2rem;
+}
+
+.service-1 {
+    padding-bottom: 2rem;
+}
+
+.service-3 {
+    padding-bottom: 2rem;
+}
+
+#newsletter {
+    background-color: rgba(0, 0, 0, 0.857);
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    color: white;
+}
+
+
+.newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter-text {
+    width: 50%;
+}
+
+.newsletter-text h3 {
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+.newsletter-text p{
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.news-email input {
+    padding: 1rem;
+    width: 100%;
+    color: white;
+    border: none;
+    background-color: salmon;
+    margin-bottom: 1rem;
+}
+
+.newsletter button {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: salmon;
+    padding: 1rem;
+    color: white;
+}
+
+.contact {
+    padding-top: 15rem;
+    text-align: center;
+
+}
+
+.contact h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.586);
+    padding-bottom: 3rem;
+}
+
+.contact h4 {
+    font-size: 5rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+    color: rgba(0, 0, 0, 0.786);
+}
+
+.contact h5 {
+    font-size: 3rem;
+    font-weight: 200;
+    padding-bottom: 3rem;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.786);
+}
+
+.contact p {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    font-weight: 200;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 10rem;
+}
+
+.social img {
+    width: 3rem;
+}
+
+footer {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.857);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    color: white;
+}
+
+
+@media (max-width: 900px) {
+
+    body{
+        font-size: 12px;
+    }
+    .hide-mobile {
+        display: none;
+    }
+
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        
+    }
+
+  
+    nav li {
+        margin-right: 0;
+        padding: 10px;
+    }
+    .check {
+        display: none;
+     
+    }
+
+    #showcase h1{
+        margin-top: -5rem;
+    }
+
+    #showcase p{
+        width: 100%;
+    }
+
+    .write {
+        display: block;
+        flex-direction: column;
+        
+    }
+
+    .card-link p {
+        font-size: 1rem;
+        
+    }
+    
+    .card-link img {
+        width: 100%;
+    }
+    
+
+    .write h2 {
+        padding-bottom: 2rem;
+    }
+
+    .rooms {
+        flex-direction: column;
+    }
+
+    .room-img img{
+        width: 100%;
+    }
+
+    .reviews h4 {
+        font-size: 2rem;
+    }
+
+    .essential-img {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    
+    .ess-img img {
+        width: 100%;
+    }
+    .newsletter {
+        flex-direction: column;
+        padding-top: -10rem;
+        
+    }
+
+    .newsletter-text {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .news-form{
+        width: 100%;
+    }
+    
+    .contact h4 {
+        font-size: 3rem;
+    }
+
+    .contact h5 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+
+    body{
+        font-size: 8pxx;
+    }
+    .hide-mobile {
+        display: none;
+    }
+
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        
+    }
+
+  
+    nav li {
+        margin-right: 0;
+        padding: 10px;
+    }
+    .check {
+        display: none;
+     
+    }
+    #showcase h1 {
+        font-size: 2rem;
+    }
+    #showcase p {
+        font-size: .8rem;
+    }
+    .write {
+        display: block;
+        flex-direction: column;
+        
+    }
+
+    .write h2 {
+        padding-bottom: 2rem;
+    }
+
+    .rooms {
+        flex-direction: column;
+    }
+
+    .reviews h4 {
+        font-size: 1rem;
+    }
+
+    .card-link img {
+        width: 100%;
+    }
+
+    .essential-img {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .essentials h4{
+
+        font-size: 1.6rem;
+        margin-bottom: -2rem;
+
+    }
+    .essentials h5{
+
+        font-size: .8rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+
+    }
+
+
+    .service-3 {
+        padding-top: 2rem;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        padding-top: -10rem;
+        
+    }
+
+    .newsletter-text {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .newsletter-text p {
+        font-size: 1.7rem;
+    }
+
+    .news-form{
+        width: 100%;
+    }
+    
+    .contact h3 {
+        font-size: 1rem;
+        margin-top: -5rem;
+    }
+    .contact h4 {
+        font-size: 2rem;
+    }
+
+    .contact h5 {
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+}
