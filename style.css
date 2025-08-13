@@ -1,3 +1,16 @@
+:root {
+    --primary: #F19E39;
+    --primary-dark: #C77C1E;
+    --secondary: #ec4899;
+    --accent: #f59e0b;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +20,8 @@
 body {
     font-size: 16px;
     font-family: poppins;
-
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
 }
 .container {
     width: 80%;
@@ -15,18 +29,223 @@ body {
     margin-right: auto;
 }
 
+/* Glassmorphism utility */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
 header {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: white;
+    background: linear-gradient(to right, #1a2a3a, #2c3e50); /* Dark gradient background */
+    position: relative;
 }
 
+/* Add subtle pattern overlay */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Modern Form Elements */
+.reserve-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: var(--background);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-md);
+    background-color: var(--background);
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(200, 169, 126, 0.25);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-submit {
+    margin-top: var(--spacing-lg);
+}
+
+/* Modern Navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    padding: 1rem 0;
+    position: relative;
+    z-index: 100;
+}
 
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1.5rem;
+}
+
+.logo img {
+    height: 50px;
+    transition: transform var(--transition-normal);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-bar {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-bar a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    transition: color var(--transition-normal);
+}
+
+.nav-bar a:hover {
+    color: var(--primary);
+}
+
+.nav-bar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width var(--transition-normal);
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: var(--background);
+        flex-direction: column;
+        padding: 5rem 2rem;
+        transition: right var(--transition-normal);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .nav-bar.active {
+        right: 0;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        z-index: 101;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+    animation: fadeIn 1.2s ease;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 nav ul{
@@ -41,12 +260,14 @@ nav ul li {
 }
 nav ul li a {
     text-decoration: none;
-    color: goldenrod;
+    color: white; /* Changed from goldenrod for better visibility */
+    font-weight: 400;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
-    
+    color: goldenrod;
+    text-decoration: none;
 }
 
 nav ul li a:active{
@@ -63,20 +284,25 @@ nav ul li a:active{
     text-decoration: underline;
 } */
 
-nav .btn a{
-    text-decoration: none;
-    color: goldenrod;
-    border: 1px, solid, goldenrod;
-    padding: .8rem;
-    cursor: pointer;
-    border-radius: 5px;
-}
-nav .btn a:hover{
+nav .btn a {
     text-decoration: none;
     color: white;
     background-color: goldenrod;
-    padding: .8rem;
+    border: 2px solid goldenrod; /* Fixed border syntax */
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
     border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+nav .btn a:hover {
+    background-color: transparent;
+    color: goldenrod;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .side-bar {
@@ -111,8 +337,9 @@ nav .btn a:hover{
 
 }
 
-.active {
-    text-decoration: underline;
+nav ul li a.active {
+    color: goldenrod;
+    font-weight: 500;
 }
 
 .check {
@@ -233,18 +460,25 @@ nav .btn a:hover{
     /* width: 500rem; */
 
 }
-  #showcase{
+#showcase{
     text-align: center;
     padding-top: 15rem;
     padding-bottom: 15rem;
-    background-image: url('https://www.hilton.com/im/en/NoHotel/22467438/q1-feb-web-default-seasonal-a.png?impolicy=crop&cw=4500&ch=3000&gravity=NorthWest&xposition=0&yposition=0&rw=3000&rh=2002');
+    background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Creates a parallax effect */
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: multiply;
+    min-height: 100vh; /* Ensures it fits the laptop screen */
+    display: flex;
+    align-items: center;
+}
 
-
-  }
+#showcase .container {
+    width: 100%;
+}
 
 #showcase h1 {
     text-align: center;
@@ -257,14 +491,14 @@ nav .btn a:hover{
 
 #showcase p {
     text-align: center;
-    /* margin-top: 1rem; */
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
     color: white;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 1rem;
+    line-height: 1.6;
 }
 
 #showcase a {
@@ -273,18 +507,19 @@ nav .btn a:hover{
     color: goldenrod;
     background-color: white;
     border-radius: 3px;
-    padding: 1rem;
-
+    padding: 1rem 2rem;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 #showcase a:hover {
     text-decoration: none;
-    text-align: center;
     color: white;
     background-color: black;
     border-radius: 3px;
-    padding: 1rem;
-
+    padding: 1rem 2rem;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 #card {
@@ -360,7 +595,11 @@ nav .btn a:hover{
     margin-left: auto;
     margin-right: auto;
 
-} 
+}
+
+.card-list .card-item .card-link:hover {
+    transform: translateY(-5px);
+}
 
 
 
@@ -437,50 +676,97 @@ nav .btn a:hover{
 }
 
 .rooms {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
 }
 
-.rooms img {
-    width: 24rem;
+.room-1, .room-2, .room-3 {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.rooms p img {
-    width: 1.5rem;
-    gap: 1rem;
+
+.room-1:hover, .room-2:hover, .room-3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.room-img {
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.room-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.room-img img:hover {
+    transform: scale(1.05);
 }
 
 .rooms h3 {
-    font-weight: 200;
-    font-size: 2rem;
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
 }
-.p-tags p {
-    display: inline-flex;
-    gap: .5rem;
+
+.rooms h4 {
+    color: goldenrod;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .p-tags {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
-    gap: 3rem;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.p-tags p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.p-tags p img {
+    width: 1.2rem;
+}
+
+.rooms p {
+    margin-bottom: 1.5rem;
+    color: #666;
+    line-height: 1.6;
 }
 
 .rooms button {
     margin-top: 1rem;
-    background-color: none;
+    background-color: goldenrod;
+    color: white;
     border: none;
-    text-decoration: none;
-
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
 }
 
 .rooms button:hover {
-    margin-top: 1rem;
-    background-color: none;
-    border: none;
-    text-decoration: underline;
-    
+    background-color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 #review {
@@ -681,11 +967,89 @@ footer {
 }
 
 
-@media (max-width: 900px) {
-
-    body{
-        font-size: 12px;
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .container {
+        width: 90%;
     }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    #showcase h1 {
+        font-size: 3rem;
+    }
+    
+    .reviews h4 {
+        width: 90%;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    nav {
+        padding: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .check {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .check-in, .check-out, .adult, .child {
+        width: 100%;
+    }
+    
+    #showcase {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    
+    #showcase h1 {
+        font-size: 2.5rem;
+    }
+    
+    #showcase p {
+        width: 90%;
+        font-size: 1rem;
+    }
+    
+    .write {
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom: 2rem;
+    }
+    
+    .write button {
+        align-self: flex-start;
+    }
+    
+    .reviews {
+        width: 90%;
+        padding-top: 8rem;
+    }
+    
+    .reviews h4 {
+        font-size: 1.8rem;
+    }
+    
+    .reviews p {
+        font-size: 1.2rem;
+    }
+    
     .hide-mobile {
         display: none;
     }
@@ -693,57 +1057,27 @@ footer {
     .menu-icon{
         display: block;
         cursor: pointer;
-        
     }
-
   
     nav li {
         margin-right: 0;
         padding: 10px;
     }
-    .check {
-        display: none;
-     
-    }
-
-    #showcase h1{
-        margin-top: -5rem;
-    }
-
-    #showcase p{
-        width: 100%;
-    }
-
-    .write {
-        display: block;
-        flex-direction: column;
-        
-    }
-
+    
     .card-link p {
         font-size: 1rem;
-        
     }
     
     .card-link img {
         width: 100%;
     }
     
-
-    .write h2 {
-        padding-bottom: 2rem;
-    }
-
     .rooms {
         flex-direction: column;
     }
 
     .room-img img{
         width: 100%;
-    }
-
-    .reviews h4 {
-        font-size: 2rem;
     }
 
     .essential-img {
@@ -755,10 +1089,9 @@ footer {
     .ess-img img {
         width: 100%;
     }
+    
     .newsletter {
         flex-direction: column;
-        padding-top: -10rem;
-        
     }
 
     .newsletter-text {
@@ -770,122 +1103,61 @@ footer {
     .news-form{
         width: 100%;
     }
-    
-    .contact h4 {
-        font-size: 3rem;
-    }
-
-    .contact h5 {
-        font-size: 2rem;
-    }
-
-    .contact p {
-        font-size: 1rem;
-    }
 }
 
-@media (max-width: 700px) {
-
-    body{
-        font-size: 8pxx;
-    }
-    .hide-mobile {
-        display: none;
-    }
-
-    .menu-icon{
-        display: block;
-        cursor: pointer;
-        
-    }
-
-  
-    nav li {
-        margin-right: 0;
-        padding: 10px;
-    }
-    .check {
-        display: none;
-     
-    }
-    #showcase h1 {
+@media (max-width: 576px) {
+    .hero h1 {
         font-size: 2rem;
     }
+    
+    #showcase h1 {
+        font-size: 2rem;
+        margin-top: -2rem;
+    }
+    
     #showcase p {
         font-size: .8rem;
     }
-    .write {
-        display: block;
+    
+    .p-tags {
         flex-direction: column;
-        
+        align-items: flex-start;
+        gap: 0.5rem;
     }
-
-    .write h2 {
-        padding-bottom: 2rem;
+    
+    body{
+        font-size: 12px;
     }
-
-    .rooms {
-        flex-direction: column;
-    }
-
+    
     .reviews h4 {
-        font-size: 1rem;
-    }
-
-    .card-link img {
-        width: 100%;
-    }
-
-    .essential-img {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 0;
+        font-size: 1.5rem;
     }
 
     .essentials h4{
-
         font-size: 1.6rem;
-        margin-bottom: -2rem;
-
+        margin-bottom: -1rem;
     }
+    
     .essentials h5{
-
         font-size: .8rem;
         font-weight: 300;
         margin-bottom: 1rem;
         margin-top: 1rem;
-
     }
-
 
     .service-3 {
         padding-top: 2rem;
     }
 
-    .newsletter {
-        flex-direction: column;
-        padding-top: -10rem;
-        
-    }
-
-    .newsletter-text {
-        width: 100%;
-        text-align: center;
-        padding-bottom: 2rem;
-    }
-
     .newsletter-text p {
         font-size: 1.7rem;
-    }
-
-    .news-form{
-        width: 100%;
     }
     
     .contact h3 {
         font-size: 1rem;
-        margin-top: -5rem;
+        margin-top: -3rem;
     }
+    
     .contact h4 {
         font-size: 2rem;
     }

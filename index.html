@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="hotel, apartments">
-    <meta name="keywords" content="grand-yunus-suites-&-services, grand-yunus, grand-yunus-suites, hotel, apartment, hotels">
+    <meta name="description" content="Grand Yunus Suites & Services - Luxury hotel accommodations and exceptional service">
+    <meta name="keywords" content="grand-yunus-suites-&-services, grand-yunus, grand-yunus-suites, hotel, apartment, hotels, luxury">
+    <!-- Modern design system -->
+    <link rel="stylesheet" href="modern-design.css">
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-   <!-- Link Swiper's CSS -->
+    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_right" />
     <title>GRAND YUNUS SUITES & SERVICES</title>
 </head>
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav class="glass">
                 <div class="logo">
-                    <a href="#"><img src="logo.svg" alt=""></a>
+                    <a href="#"><img src="logo.svg" alt="Grand Yunus Suites & Services"></a>
                 </div>
                 <div class="nav-bar">
                     <ul class="side-bar">
-                        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F19E39"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F19E39"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224 224-56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="room.html">Our Rooms</a></li>
                         <!-- <li><a href="#card">Offers</a></li> -->
@@ -48,6 +51,16 @@
                     <a href="room.html">Book Now!</a>
                 </div>
             </nav>
+            
+            <div class="hero">
+                <div class="hero-overlay"></div>
+                <img src="hero-image.jpg" alt="Luxury Hotel" class="hero-bg">
+                <div class="hero-content">
+                    <h1 class="animate fade-in">Experience Luxury</h1>
+                    <p class="animate fade-in">Welcome to Grand Yunus Suites & Services, where exceptional comfort meets unparalleled service.</p>
+                    <a href="#rooms" class="btn animate fade-in">Explore Our Rooms</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -396,31 +409,122 @@
 
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center animate" data-animation="slide-in-left">About Us</h2>
+            <p class="text-center animate" data-animation="fade-in">
+                Grand Yunus Suites & Services offers a perfect blend of luxury and comfort for all our guests.
+            </p>
+            <div class="essential-img">
+                    <div class="ess-img">
+                        <img src="https://www.hilton.com/im/en/NoHotel/15866037/15039-ham-ohw-refresh-a.jpg?impolicy=crop&cw=4500&ch=3000&gravity=NorthWest&xposition=0&yposition=0&rw=2880&rh=1920" alt="" class="ess-img">
+                    </div>
+                
+                    <div class="essential-text">
+                        <div class="service-1">
+                            <img src="https://www.svgrepo.com/show/490800/housekeeping.svg" alt="">
+                            <div class="p-text">
+                                <h5>Housekeeping Services</h5>
+                                <p>Indulge in outstanding room service provided by our attentive staff, who are committed to making your stay unforgettable. They are always just a call away, ready to cater to your every need and ensure that your experience is nothing short of extraordinary.</p>
+                            </div>
+                        </div>
+                        <div class="service-2">
+                            <img src="https://www.svgrepo.com/show/535739/wifi.svg" alt="">
+                            <div class="p-text">
+                                <h5>Free Wi-Fi Services</h5>
+                                <p>Experience uninterrupted 24/7 WiFi access, allowing you to stay continuously connected to your passions and interests no matter the time or place. Whether you're streaming your favorite shows, engaging in online gaming, or browsing the latest news, you'll never miss a moment.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="essential-img">
+                    <div class="essential-text">
+                        <div class="service-3">
+                            <img src="https://www.svgrepo.com/show/383684/breakfast-hot-drink-coffee.svg" alt="">
+                            <div class="p-text">
+                                <h5>Breakfast Services</h5>
+                                <p>Each menu is thoughtfully designed, showcasing a vibrant selection of dishes that highlight fresh, locally sourced ingredients. These exquisite creations not only reflect the rich traditions of the local community but also draw inspiration from culinary influences around the world, creating a dining experience that is both unique and deeply connected to the region.</p>
+                            </div>
+                        </div>
+                        <div class="service-4">
+                            <img src="https://www.svgrepo.com/show/509503/bar.svg" alt="">
+                            <div class="p-text">
+                                <h5>Bar</h5>
+                                <p>Our bar features an exquisite array of culinary traditions, showcasing everything from refined and creative dishes to vibrant and exotic flavors. Each offering is thoughtfully crafted to provide a unique dining experience that tantalizes the senses and celebrates diverse culinary heritages.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                   <div class="ess-img">
+                    <img src="https://parkviewastoriahotels.com/wp-content/uploads/2024/02/PAH-178-1024x768.jpg" alt="">
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="newsletter">
+        <div class="container">
+            <div class="newsletter">
+                <div class="newsletter-text">
+                    <h3>Do you want to get our Newsletters?</h3>
+                    <p>Subscribe to our newsletter to stay updated on our latest news, deals, and special offers.</p>
+                </div>
+                <div class="news-form">
+                    <form action="" method="get">
+                        <div class="news-email">
+                            <input type="email" id="email" name="email" placeholder="Email Address">
+                        </div>
+                        <p><input type="checkbox"> I agree to terms and policy</p>
+                        <button type="submit">Subscribe!</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section id="contact">
+        <div class="contact">
+
+            <h3>pay us a visit</h3>
+            <h4>(+234)9013092478</h4>
+            <h5>okolicd0@gmail.com</h5>
+            <p>104 Emmanuel Adiele, 643106, Jabi, Abuja, Nigeria</p>
+            
+
+                <div class="social">
+                    <a href=""><img src="https://www.svgrepo.com/show/494278/linkedin-round.svg" alt=""></a>
+                    <a href=""><img src="https://www.svgrepo.com/show/503338/facebook.svg" alt=""></a>
+                    <a href=""><img src="https://www.svgrepo.com/show/494287/twitter-round.svg" alt=""></a>
+                    <a href=""><img src="https://www.svgrepo.com/show/433541/instagram-f.svg" alt=""></a>
+                </div>
+            
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© Copyrights. All rights reserved. Grand Yunus Suites & Services</p>
+    </footer>
+
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.side-bar')
+            sidebar.style.display = 'flex'
+        }
+        
+        function hideSidebar(){
+            const sidebar = document.querySelector('.side-bar')
+            sidebar.style.display = 'none'
+        }
+
+    </script>
+
     <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
-
-
 </html>
